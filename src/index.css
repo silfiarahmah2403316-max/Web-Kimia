@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Design System & Global Variables
+   Pembelajaran Kimia Interaktif Asam Basa (SMA Kelas XI)
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Modern Dark Slate Laboratory Aesthetic */
+  --bg-main: #090d16;
+  --bg-surface: #0f172a;
+  --bg-surface-elevated: #1e293b;
+  --bg-surface-card: rgba(30, 41, 59, 0.7);
+  --bg-surface-hover: #27354f;
+
+  /* Typography Colors */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --text-inverse: #090d16;
+
+  /* Borders & Glassmorphism */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-highlight: rgba(255, 255, 255, 0.25);
+  --glass-bg: rgba(15, 23, 42, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  /* Chemistry Theme Colors */
+  --color-acid: #ef4444;
+  --color-acid-glow: rgba(239, 68, 68, 0.3);
+  --color-base: #10b981;
+  --color-base-glow: rgba(16, 185, 129, 0.3);
+  --color-neutral: #06b6d4;
+  --color-neutral-glow: rgba(6, 182, 212, 0.3);
+  --color-thermo: #f97316;
+  --color-thermo-glow: rgba(249, 115, 22, 0.3);
+  --color-stoich: #0ea5e9;
+  --color-stoich-glow: rgba(14, 165, 233, 0.3);
+  --color-accent: #6366f1;
+  --color-accent-glow: rgba(99, 102, 241, 0.3);
+
+  /* Gradients */
+  --grad-cyan-blue: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+  --grad-emerald-teal: linear-gradient(135deg, #34d399 0%, #0d9488 100%);
+  --grad-amber-orange: linear-gradient(135deg, #fbbf24 0%, #ea580c 100%);
+  --grad-violet-indigo: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+
+  /* Typography Font Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 35px -10px rgba(0, 0, 0, 0.6);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Atmosphere Glow */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%;
+  left: 15%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 650px;
+  max-height: 650px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, rgba(99, 102, 241, 0.03) 60%, transparent 75%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 5%;
+  right: 10%;
+  width: 45vw;
+  height: 45vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, rgba(6, 182, 212, 0.02) 60%, transparent 75%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* App Root Container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-stoich);
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(14, 165, 233, 0.35);
+  color: #ffffff;
+}
